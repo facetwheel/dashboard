@@ -157,8 +157,8 @@
 
 </body>
     
-<script src="d3.v4.min.js"></script>
-<script src="d3-geo-projection.v2.min.js"></script>
+<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/d3-geo-projection@2.7.0/dist/d3-geo-projection.min.js"></script>
 
 <script>
 
@@ -169,8 +169,8 @@
 // Read data 
 
 d3.queue()
-  .defer(d3.json, "mdb-bundestag_TWITTER_groups_ovlp.json")  // Gruppen     "mdb-bundestag-tweets_TWITTER_klimaschutz_groups_jaccard.json"     "mdb-bundestag_TWITTER_groups_jaccard.json"     "RKI_COVID19_data_2021-11-10_groups.json"
-  .defer(d3.json, "deu_wahlkreise_simp.geojson")  // Map    "deu_wahlkreise_simp.geojson"     "deu_simp.geojson"
+  .defer(d3.json, "mdb-bundestag_TWITTER_groups_ovlp.json")  // Gruppen
+  .defer(d3.json, "deu_wahlkreise_simp.geojson")  // Map
   .await(main);
 
 
@@ -2012,6 +2012,7 @@ function createSpaceViz(dataGroups, dataGeo, targetSVG) {
             .duration(750)
             .attr("r", 0)
     }
+
 
 
 
