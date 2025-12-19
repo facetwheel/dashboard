@@ -157,19 +157,20 @@
 
 </body>
     
-<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/d3-geo-projection@2.7.0/dist/d3-geo-projection.min.js"></script>
+<script src="d3.v4.min.js"></script>
+<script src="d3-geo-projection.v2.min.js"></script>
 
 <script>
 
 
-
+// Read data <script type="text/javascript" src="https://d3js.org/d3.v4.min.js">
+// d3.json("RKI_COVID19_data_2020-05-25_groups.json", 
 
 // Read data 
 
 d3.queue()
-  .defer(d3.json, "mdb-bundestag_TWITTER_groups_ovlp.json")  // Gruppen
-  .defer(d3.json, "deu_wahlkreise_simp.geojson")  // Map
+  .defer(d3.json, "mdb-bundestag_TWITTER_state_groups_ovlp.json")  // Gruppen     "mdb-bundestag-tweets_TWITTER_klimaschutz_groups_jaccard.json"     "mdb-bundestag_TWITTER_groups_jaccard.json"     "RKI_COVID19_data_2021-11-10_groups.json"
+  .defer(d3.json, "germany_nuts1_wgs84.geojson")  // Map    "deu_wahlkreise_simp.geojson"     "deu_simp.geojson"
   .await(main);
 
 
@@ -1801,7 +1802,7 @@ function createSpaceViz(dataGroups, dataGeo, targetSVG) {
         .style("font-family", "sans-serif") // Schriftart
         .style("font-size", "12px") // Schriftgröße
         .style("font-weight", "bold") // Fettschrift
-        .text("Electoral Districts of Germany");
+        .text("Federal States of Germany");
 
         // Legende
 
@@ -2014,8 +2015,4 @@ function createSpaceViz(dataGroups, dataGeo, targetSVG) {
 
 
 
-
 </script>
-
-
-
